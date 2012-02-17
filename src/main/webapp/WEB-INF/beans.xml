@@ -18,20 +18,15 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd"
         <cxf:features>
             <cxf:logging/>
         </cxf:features>
-    </cxf:bus> 
+    </cxf:bus>
 
-	
-	  <jaxws:endpoint xmlns:tns="http://service.pkarpik.pl"
-		id="hello" implementor="pl.pkarpik.service.impl.HelloImpl"
-		wsdlLocation="/WEB-INF/wsdl/hello.wsdl" endpointName="tns:HelloService"
-		serviceName="tns:HelloService" address="/helloService">
+	<jaxws:endpoint wsdlLocation="/WEB-INF/wsdl/hello.wsdl" 
+					implementor="pl.pkarpik.service.impl.HelloServiceImpl"
+					address="/helloService">
 		<jaxws:features>
 			<bean class="org.apache.cxf.feature.LoggingFeature" />
 		</jaxws:features>
 	</jaxws:endpoint>
 	  
-	  
-
-	
 	  
 </beans>
